@@ -18,5 +18,4 @@ public class MethodEx01 {
 		System.out.println("³ª´©±â : "+num4);
 	}
 
-	
 }
