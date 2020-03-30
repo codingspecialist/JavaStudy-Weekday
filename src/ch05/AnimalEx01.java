@@ -5,9 +5,7 @@ abstract class Animal {
 }
 
 class Mouse extends Animal{
-	
-	final String NAME="¡„";
-	
+	final String NAME = "¡„";
 	@Override
 	String getName() {
 		return NAME;
