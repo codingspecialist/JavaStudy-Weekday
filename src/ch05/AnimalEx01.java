@@ -1,7 +1,10 @@
 package ch05;
 
+// 앱 스트렉트
 abstract class Animal {
-	abstract String getName();
+	String getName() {
+		return null;
+	};
 }
 
 class Mouse extends Animal{
@@ -14,7 +17,7 @@ class Mouse extends Animal{
 
 class Dog extends Animal{
 	final String NAME = "강아지";
-	
+
 	@Override
 	String getName() {
 		return NAME;
