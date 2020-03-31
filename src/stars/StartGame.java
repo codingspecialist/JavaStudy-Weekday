@@ -22,14 +22,14 @@ public class StartGame {
 	
 	public static void main(String[] args) {
 		Protoss.upgrade();
-		Zealot z1 = new Zealot("Áú·µ1");
-		Dragoon d1 = new Dragoon("µå¶ó±º1");
+		Zealot z1 = new Zealot("ï¿½ï¿½ï¿½ï¿½1");
+		Dragoon d1 = new Dragoon("ï¿½ï¿½ï¿½1");
 		move(z1);
 		repair(z1);
 		attack(z1, d1);
 		
-		Hydra h1 = new Hydra("È÷µå¶ó1");
-		Tank t1 = new Tank("ÅÊÅ©1");
+		Hydra h1 = new Hydra("ï¿½ï¿½ï¿½ï¿½ï¿½1");
+		Tank t1 = new Tank("ï¿½ï¿½Å©1");
 		
 		repair(h1);
 		move(t1);
