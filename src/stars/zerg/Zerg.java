@@ -5,7 +5,7 @@ import stars.Behavior;
 public abstract class Zerg implements Behavior{
 	
 	@Override
-	public void move() {
+	public void move() { 
 		System.out.println("¿Ãµø");
 	}
 	@Override
