@@ -10,7 +10,7 @@ public abstract class Zerg implements Behavior{
 	}
 	@Override
 	public void repair() {
-		System.out.println("자연 치료");	
+		System.out.println("자연 치료!");	
 	}
 	
 	public static void upgrade() {
