@@ -15,6 +15,7 @@ public class FrenchFried {
 	public FrenchFried(int price, String desc) {
 		this.price = price;
 		this.desc = desc;
+		System.out.println(desc+"가 만들어졌습니다.");
 	}
 	
 	
