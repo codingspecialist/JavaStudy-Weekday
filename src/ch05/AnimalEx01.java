@@ -2,26 +2,17 @@ package ch05;
 
 // 앱 스트렉트
 abstract class Animal {
-	String getName() {
-		return null;
-	};
-}
-
-class Mouse extends Animal{
-	final String NAME = "쥐";
-	@Override
-	String getName() {
-		return NAME;
-	}
+	abstract String getName();
 }
 
 class Dog extends Animal{
 	final String NAME = "강아지";
-
+	
 	@Override
 	String getName() {
 		return NAME;
 	}
+	
 }
 
 class Cat extends Animal {
@@ -42,8 +33,8 @@ class Bird extends Animal {
 	}
 }
 
-class Tiger extends Animal{
-	final String NAME = "호랑이";
+class Mouse extends Animal{
+	final String NAME = "쥐";
 	@Override
 	String getName() {
 		return NAME;
@@ -52,6 +43,7 @@ class Tiger extends Animal{
 
 public class AnimalEx01 {
 
+	// d1(강아지), b1(새)
 	static void attack(Animal u1, Animal u2) {
 		System.out.println(u2.getName()+"가 "+u1.getName()+"에게 공격당했습니다.");
 	}
@@ -60,23 +52,16 @@ public class AnimalEx01 {
 		Dog d1 = new Dog();
 		Cat c1 = new Cat();
 		Bird b1 = new Bird();
-		Tiger t1 = new Tiger();
+		Mouse m1 = new Mouse();
 		
 		System.out.println(d1.NAME+" 탄생");
 		System.out.println(c1.NAME+" 탄생");
-		System.out.println(b1.NAME+" 탄생");		
+		System.out.println(b1.NAME+" 탄생");	
+		System.out.println(m1.NAME+" 탄생");
 
 		// 강아지 vs 고양이
 		attack(d1, c1);
-		
-		// 강아지 vs 새
-		attack(d1, b1);
-		
-		// 고양이 vs 새
-		attack(c1, b1);
-		
-		// 호랑이 vs 고양이
-		attack(t1, c1);
+
 	
 	}
 
