@@ -2,9 +2,10 @@ package composite;
 
 import lombok.Data;
 
+// 콤포지션 = 부품 결합
 // 자바는 다중 상속이 안됨
 @Data
-public class BigBurgerSet {
+public class BigBurgerSet{
 	private BigBurger bigBurger;
 	private Coke coke;
 	private FrenchFried frenchFried;
