@@ -2,6 +2,7 @@ package chat;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
+import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 // CTRL + SHIFT + O
@@ -14,18 +15,25 @@ public class MySocketServer {
 	ServerSocket serverSocket;
 	Vector<NewSocketThread> vt;
 	
-	public MySocketServer() throws Exception {
+	public MySocketServer(){
 		vt = new Vector<>();
-		serverSocket = new ServerSocket(3000);
-		
-		while(true) {
-			Socket socket = serverSocket.accept();
-			System.out.println("요청이 들어옴");
-			NewSocketThread nt = new NewSocketThread(socket);
-			Thread newWorker = new Thread(nt);
-			newWorker.start();
-			vt.add(nt);
+		try {
+			serverSocket = new ServerSocket(3000);
+			while(true) {
+				Socket socket = serverSocket.accept();
+				System.out.println("요청이 들어옴");
+				NewSocketThread nt = new NewSocketThread(socket);
+				Thread newWorker = new Thread(nt);
+				newWorker.start();
+				vt.add(nt);
+			}
+		} catch (IOException e) {
+			System.out.println("채팅 연결이 끊어졌습니다.");
+		} finally {
+			
 		}
+		
+		
 	}
 	
 	// 새로운 쓰레드에게 버퍼를 연결할 수 있게 socket을 전달!!
@@ -49,20 +57,31 @@ public class MySocketServer {
 				
 				String msg = "";
 				while((msg = br.readLine()) != null) {
+					System.out.println("클라이언트 : "+msg);
 					for (NewSocketThread newSocketThread : vt) {
-						newSocketThread.bw.write(msg+"\n");
-						newSocketThread.bw.flush();
+						if(newSocketThread != this) {
+							newSocketThread.bw.write(msg+"\n");
+							newSocketThread.bw.flush();
+							
+						}
 					}
 				}
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
+			} finally {
+				try {
+					socket.close();
+					br.close();
+					bw.close();
+				} catch (IOException e) {
+					System.out.println("채팅 연결이 끊어졌습니다.");
+				}
+				
 			}
 		}
 	}
 	
-	
 	public static void main(String[] args) {
-		
+		new MySocketServer();
 	}
 }
