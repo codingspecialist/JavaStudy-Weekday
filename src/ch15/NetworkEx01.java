@@ -35,8 +35,6 @@ public class NetworkEx01 {
 
 			System.out.println(sb.toString());
 			
-			Gson gson = new Gson();
-			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
