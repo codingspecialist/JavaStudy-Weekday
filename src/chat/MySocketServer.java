@@ -28,9 +28,7 @@ public class MySocketServer {
 				vt.add(nt);
 			}
 		} catch (IOException e) {
-			System.out.println("채팅 연결이 끊어졌습니다.");
-		} finally {
-			
+			e.printStackTrace();
 		}
 		
 		
@@ -68,15 +66,6 @@ public class MySocketServer {
 				}
 			} catch (Exception e) {
 				e.printStackTrace();
-			} finally {
-				try {
-					socket.close();
-					br.close();
-					bw.close();
-				} catch (IOException e) {
-					System.out.println("채팅 연결이 끊어졌습니다.");
-				}
-				
 			}
 		}
 	}
