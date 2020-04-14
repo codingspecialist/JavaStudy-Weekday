@@ -43,6 +43,7 @@ public class FlightApp {
 			Gson gson = new Gson();
 			FlightInfo flightInfo = gson.fromJson(sb.toString(), FlightInfo.class);
 			
+			
 			return flightInfo;
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -71,7 +72,6 @@ public class FlightApp {
 		
 		FlightInfo flightInfo = 
 				getFlightInfo(depAirportId, arrAirportId,depPlandTime);
-
 
 		List<Item> flightItems = flightInfo.getResponse().getBody().getItems().getItem();  
 		
