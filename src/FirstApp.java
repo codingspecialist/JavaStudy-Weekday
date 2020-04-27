@@ -2,6 +2,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JCheckBox;
+import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
 public class FirstApp {
 
@@ -40,7 +43,23 @@ public class FirstApp {
 		frame.getContentPane().setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("Java");
-		lblNewLabel.setBounds(26, 136, 186, 100);
+		lblNewLabel.setBounds(105, 91, 137, 97);
 		frame.getContentPane().add(lblNewLabel);
+		
+		JCheckBox chckbxNewCheckBox = new JCheckBox("New check box");
+		chckbxNewCheckBox.setBounds(20, 26, 115, 23);
+		frame.getContentPane().add(chckbxNewCheckBox);
+		
+		JMenuBar menuBar = new JMenuBar();
+		frame.setJMenuBar(menuBar);
+		
+		JMenuItem mntmNewMenuItem = new JMenuItem("New menu item");
+		menuBar.add(mntmNewMenuItem);
+		
+		JMenuItem mntmNewMenuItem_1 = new JMenuItem("New menu item");
+		menuBar.add(mntmNewMenuItem_1);
+		
+		JMenuItem mntmNewMenuItem_2 = new JMenuItem("New menu item");
+		menuBar.add(mntmNewMenuItem_2);
 	}
 }
