@@ -2,7 +2,6 @@ package projectex;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 // 회원삭제(D), 회원가입(I), 로그인(S), 회원조회(S), 회원전체조회(S), 회원수정(U)
 public class UsersDAO {

@@ -20,7 +20,7 @@ public class InsertEx01 {
 			pstmt.setString(3, "dongwon@nate.com");
 			pstmt.setString(4, "1234");
 			// 버퍼에 쓰기 (commit)
-			int result = pstmt.executeUpdate(); // 리턴 : 몇건이 수행됐는지 int로 리턴
+			pstmt.executeUpdate(); // 리턴 : 몇건이 수행됐는지 int로 리
 			System.out.println("인서트 완료");
 		} catch (Exception e) {
 			e.printStackTrace();

@@ -17,7 +17,7 @@ class MyJDBC extends MyConnection{
 	}
 }
 
-class Hello {
+class Hi {
 	public void play() {
 		MyConnection conn = MyJDBC.conn;
 	}
